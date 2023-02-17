@@ -42,38 +42,39 @@ if __name__ == "__main__":
     reference_image_face_width = calculate_face_width_from_image(reference_img)
 
     focal_length = find_focal_length(known_distance, known_width, reference_image_face_width)
+    print("image_width: ", reference_image_face_width)
     print("focal_length: ", focal_length)
 
-    cap = cv2.VideoCapture(0)
-    while True:
+    # cap = cv2.VideoCapture(0)
+    # while True:
 
-        _, frame = cap.read()
+    #     _, frame = cap.read()
 
-        face_width_in_frame = calculate_face_width_from_image(frame)
-        if face_width_in_frame:
+    #     face_width_in_frame = calculate_face_width_from_image(frame)
+    #     if face_width_in_frame:
 
-            distance = calculate_distance(
-                focal_length,
-                known_width,
-                face_width_in_frame
-            )
+    #         distance = calculate_distance(
+    #             focal_length,
+    #             known_width,
+    #             face_width_in_frame
+    #         )
 
-            # draw line as background of text
-            cv2.line(frame, (30, 30), (230, 30), RED, 32)
-            cv2.line(frame, (30, 30), (230, 30), BLACK, 28)
+    #         # draw line as background of text
+    #         cv2.line(frame, (30, 30), (230, 30), RED, 32)
+    #         cv2.line(frame, (30, 30), (230, 30), BLACK, 28)
     
-            # Drawing Text on the screen
-            cv2.putText(
-                frame, 
-                f"Distance: {round(distance/12,2)} FT.", 
-                (30, 35), 
-                fonts, 0.6, GREEN, 2
-            )
+    #         # Drawing Text on the screen
+    #         cv2.putText(
+    #             frame, 
+    #             f"Distance: {round(distance/12,2)} FT.", 
+    #             (30, 35), 
+    #             fonts, 0.6, GREEN, 2
+    #         )
 
-        cv2.imshow("frame", frame)
+    #     cv2.imshow("frame", frame)
 
-        if cv2.waitKey(1) == ord("q"):
-            break
+    #     if cv2.waitKey(1) == ord("q"):
+    #         break
 
-    cap.release()
-    cv2.destroyAllWindows()
+    # cap.release()
+    # cv2.destroyAllWindows()
