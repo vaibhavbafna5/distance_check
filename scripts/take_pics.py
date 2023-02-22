@@ -20,7 +20,7 @@ import dlib
 haar_detector = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
 detector = dlib.get_frontal_face_detector()
 
-DISTANCE = 9.1
+DISTANCE = 7
 UNIT = 'FT'
   
 # define a video capture object
@@ -40,7 +40,7 @@ while(counter <= N):
   
     # display the resulting frame
     cv2.imshow('frame', frame)
-    img_name = f'webcam_face_{DISTANCE}_{UNIT}_{counter}.png' 
+    img_name = f'webcam_img_{DISTANCE}_{UNIT}_{counter}.png' 
     cv2.imwrite(img_name, frame)
     counter += 1
 
