@@ -20,7 +20,7 @@ import dlib
 haar_detector = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
 detector = dlib.get_frontal_face_detector()
 
-DISTANCE = 7
+DISTANCE = 8
 UNIT = 'FT'
   
 # define a video capture object
